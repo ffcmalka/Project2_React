@@ -1,10 +1,1 @@
-#Rick and Morty Character Information Index
 
-###Link to API: https://rickandmortyapi.com/
-
-###My goal is to create either index cards or a search engine where you can search up or find more information about a character in the show. 
-###It should be able to render whether the character is alive or not, which episode they're from, and their last known location
-
-##MVP
-
-###Create at least index cards with info on them.
