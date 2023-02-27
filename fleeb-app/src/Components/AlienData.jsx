@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
 
-export default function CharacterData () {
+export default function AlienData () {
 
     //making a state to set data in x
     //setting up a useEffect to control my components lifecycle x
@@ -32,28 +31,25 @@ export default function CharacterData () {
     //Our state of rick is an array x
     //inside of our guarded return, lets map through our ricks. 
     // set rick on line 14,22,24 to ricks plural x
-  if (ricks) {
-    return (
-      <div className="character">
-        <div className="character-header">
-          {
-            ricks.map((rick) => (
-              <div className="chracter-card" key={rick.id}>
-                <img src={rick.image} alt={rick.name}/>
-                <h1>{rick.name}</h1>
-                <div style={{minWidth: '30em', display: 'flex', justifyContent: 'center', alignItems: 'center'}}/>
-              </div>
-            ))
-          }
-
-        </div>
-      </div>
-    )} else {
-      return (
-        <h1> loading please wait... </h1>
-      )
-    }
-    
+      if (ricks) {
+          return (
+            <div>
+              <h1>Aliens</h1>
+     { 
+             ricks.map((rick) => (
+              rick.species!="Human"?
+             <div className="character-card" key={rick.id}>
+              <h2>{rick.name}</h2> 
+              <img src={rick.image}/>
+              </div>:null
+   ) )
+  
+  }
+             </div>      
+          )} else {
+              return (
+                <h1> loading please wait </h1>
+        )}
 
 
   

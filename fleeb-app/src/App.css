@@ -16,6 +16,45 @@
   }
 }
 
-.header-title {
-  orientation: landscape;
+@font-face {
+  font-family: 'get-schwifty';
+  src: url('/src/get_schwifty.ttf');
 }
+
+.plumbus{
+  font-family: get-schwifty;
+}
+
+header {
+  background-color: black;
+  justify-content: flex-start;
+  display: flex;
+}
+
+header ul {
+  display: flex;
+  list-style: none;
+  font-family: 'get-schwifty'
+}
+
+header a {
+  color: #eee;
+  font-size: 1.3rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  margin: auto 1em;
+}
+
+header a:hover {
+  color: lime;
+}
+
+img{
+  max-width: 75%;
+}
+
+.character-main-image {
+  max-width: 100%;
+
+}
+
