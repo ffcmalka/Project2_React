@@ -33,15 +33,16 @@ export default function AlienData () {
     // set rick on line 14,22,24 to ricks plural x
       if (ricks) {
           return (
-            <div>
+            <div className="alien-grid">
               <h1>Aliens</h1>
      { 
-             ricks.map((rick) => (
-              rick.species!="Human"?
-             <div className="character-card" key={rick.id}>
-              <h2>{rick.name}</h2> 
-              <img src={rick.image}/>
-              </div>:null
+                ricks.map((rick) => (
+                  rick.species!="Human"?
+                    <div className="alien-card" key={rick.id}>
+                  <h1>{rick.name}</h1> 
+                <img src={rick.image}/>
+              <h2>ID No.{rick.id}</h2>
+            </div>:null
    ) )
   
   }

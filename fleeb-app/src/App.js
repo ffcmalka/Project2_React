@@ -16,3 +16,8 @@ function App() {
 }
 
 export default App;
+
+
+//resources 
+// https://www.npmjs.com/package/react-card-flip - card flip
+// 

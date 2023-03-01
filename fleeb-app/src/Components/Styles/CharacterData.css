@@ -1,0 +1,82 @@
+.character-card {
+  padding: 1em;
+  width: 10em;
+  height: 15em;
+  background-color: #66ff8d;
+  border-radius: 0.5em;
+  border: 5px solid #002113;
+  margin: 1em;
+  justify-content: space-around;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.527);
+  color: #002109;
+  font-family: 'Akaya Kanadaka';font-size: 22px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  position: relative;
+  transition: transform 1000ms;
+}
+
+
+.character-grid h1{
+  color: #3e0021;
+  padding: 1em;
+}
+
+
+.character-card-front,
+.card-back{
+-webkit-backface-visibility: hidden;
+backface-visibility: hidden;
+}
+
+.character-card-front{
+
+}
+
+.card-back{
+transform: rotateY(180deg);
+}
+
+.character-card h2, h3{
+  font-size: 14px;
+}
+
+.character-card img{
+  grid-template-columns: repeat(fit-content, minmax(384px, 1fr));
+  max-width: 100%;
+  height: 10em;
+  object-fit: center;
+  box-shadow: inset 0 0 1em rgb(0, 0, 0);
+}
+
+.character-card:hover {
+  transform: rotateY(180deg);
+}
+
+.character-grid {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  
+}
+
+/* Exit Transition 
+showFront = true -> false
+front -> back
+
+Enter Transition 
+showFront = false -> true
+back -> front */
+
+.flip-exit {
+  transform: rotateY(0deg);
+}
+
+.flip-exit-active {
+  transform: rotateY(180deg);
+  transition: transform;
+}
+
+.flip-exit-done {
+  transform: rotateY(0deg);
+}

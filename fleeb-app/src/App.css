@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #ffd9e4;
 }
 
 .App-logo {
@@ -26,7 +27,7 @@
 }
 
 header {
-  background-color: black;
+  background-color: #3e0021;
   justify-content: flex-start;
   display: flex;
 }
@@ -53,8 +54,73 @@ img{
   max-width: 75%;
 }
 
-.character-main-image {
-  max-width: 100%;
 
+.alien-card {
+  padding: 1em;
+  width: 18em;
+  height: 15em;
+  background-color: limegreen;
+  border-radius: 0.5em;
+  margin: 1em;
+  justify-content: space-around;
+  box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.527);
+  color: white;
+  font-family: 'Georgia';
+  cursor: pointer;
+}
+
+.alien-card img{
+  grid-template-columns: repeat(auto-fit, minmax(384px, 1fr));
+  max-width: 100%;
+  height: 10em;
+  object-fit: center;
+  box-shadow: inset 0 0 1em rgb(0, 0, 0);
+}
+
+.alien-card:hover {
+  transform: scale(1.01);
+}
+
+.alien-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.human-card {
+  padding: 1em;
+  width: 18em;
+  height: 15em;
+  background-color: limegreen;
+  border-radius: 0.5em;
+  margin: 1em;
+  justify-content: space-around;
+  box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.527);
+  color: white;
+  font-family: 'Georgia';
+  cursor: pointer;
+}
+
+.human-card img{
+  grid-template-columns: repeat(auto-fit, minmax(384px, 1fr));
+  max-width: 100%;
+  height: 10em;
+  object-fit: center;
+  box-shadow: inset 0 0 1em rgb(0, 0, 0);
+}
+
+.human-card:hover {
+  transform: scale(1.01);
+}
+
+.human-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+}
+
+.humans h1{
+font-size: 40px;
 }
 

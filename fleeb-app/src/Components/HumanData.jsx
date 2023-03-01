@@ -33,15 +33,16 @@ export default function HumanData () {
     // set rick on line 14,22,24 to ricks plural x
       if (ricks) {
           return (
-            <div>
-              <h1>Humans</h1>
+            <div className="human-grid">
+              <h1> List of Humans </h1>
      { 
-             ricks.map((rick) => (
-              rick.species==="Human"?
-             <div className="character-card" key={rick.id}>
-              <h2>{rick.name}</h2> 
-              <img src={rick.image}/>
-              </div>:null
+                ricks.map((rick) => (
+                  rick.species==="Human"?
+                    <div className="human-card" key={rick.id}>
+                  <h2>{rick.name}</h2> 
+                <img src={rick.image}/>
+              <h2>ID No.{rick.id}</h2>
+            </div>:null
    ) )
   
   }
