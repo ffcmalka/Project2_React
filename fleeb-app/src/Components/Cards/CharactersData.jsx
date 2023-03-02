@@ -1,8 +1,9 @@
-import CharacterDataCss from './Styles/CharacterData.css'
+import CharacterDataCss from '../Styles/CharacterData.css'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import SearchBar from './SearchBar'
 
 
 export default function CharacterData ({onClick}) {
@@ -16,8 +17,8 @@ export default function CharacterData ({onClick}) {
     //setup Guard Opeartor
 
     const [ricks, setRicks] = useState([])
-    const [flip, setFlip] = useState(false);
-
+    const [selectedRick, setSelectedRick] = useState(null)
+    
     useEffect(() => {
         const url = "https://rickandmortyapi.com/api/character"
 
@@ -37,31 +38,42 @@ export default function CharacterData ({onClick}) {
         const showRick = (rick) => {
             navigate(`${rick.id}`)
         }
+      
+        const flipCard = (rick) => {
+        setSelectedRick(rick)
+      }
 
     console.log(ricks)
     //Our state of rick is an array x
     //inside of our guarded return, lets map through our ricks. x
     // set rick on line 14,22,24 to ricks plural x
-    // creating onclick functions to flip cards for description. x
+    // creating onclick functions to flip cards for description: 
+        // create ternary/conditional to convert,control and render whatever is put into that block. X
+        // create an onClick close button to aet intial state of null again. X
+        // Create another button to display description using Onclick. X
+        // Using CSS make the card flip. X
   if (ricks) {
     return (
       <div className="character-grid">
           <h1> Characters from Rick and Morty </h1>
           {
             ricks.map((rick) => (
-              <div className="character-card-front" key={rick.id}>
-                <div className="character-card" onClick={onClick}>
-                {flip ? rick.status : rick.id}
-                <h2>{rick.name}</h2>
-                <img src={rick.image} alt={rick.name}/>
-                <h3>ID No.{rick.id}</h3>
-                <button onClick={() => setFlip(!flip)}>More Information</button>
+              <div className="character-card" key={rick.id}>
+                <div className="character-card-front" onClick={onClick}>
+                  <h2>{rick.name}</h2>
+                    <img src={rick.image} alt={rick.name}/>
+                  <h3>ID No.{rick.id}</h3>
                 <div style={{minWidth: '30em', display: 'flex', justifyContent: 'center', alignItems: 'center'}}/>
-                </div>
+              </div>
+                {selectedRick && selectedRick.id === rick.id && (<div className="character-card-back">
+                  <h1>Species: {rick.species} </h1>
+                  <h2>Status: {rick.status}</h2>
+                  <button onClick={() => setSelectedRick(null)}>Close</button>
+                </div>)}
+                <button onClick={() => flipCard(rick)}>More Information</button>
               </div>
             ))
           }
-            <div className="card-back">Back</div>
         </div>
     )} else {
       return (

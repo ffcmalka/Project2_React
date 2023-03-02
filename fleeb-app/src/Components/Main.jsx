@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
 import Home from './Home'
-import CharactersData from './CharactersData'
-import HumanData from './HumanData'
-import AlienData from './AlienData'
+import CharactersData from './Cards/CharactersData'
+import HumanData from './Cards/HumanData'
+import AlienData from './Cards/AlienData'
 
 export default function Main () {
   return (

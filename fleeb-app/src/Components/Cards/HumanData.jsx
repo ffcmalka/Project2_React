@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import HumanDataCss from '../Styles/HumanData.css'
 
 export default function HumanData () {
 
@@ -8,8 +9,8 @@ export default function HumanData () {
     //organize API links / url x
     // make the darn API call, right? X
     //set our data in state and log it X
-    // render our data
-    //setup Guard Opeartor
+    // render our data x
+    //setup Guard Opeartor x
 
     const [ricks, setRicks] = useState([])
 
@@ -29,7 +30,7 @@ export default function HumanData () {
 
     console.log(ricks)
     //Our state of rick is an array x
-    //inside of our guarded return, lets map through our ricks. 
+    //inside of our guarded return, lets map through our ricks. x
     // set rick on line 14,22,24 to ricks plural x
       if (ricks) {
           return (

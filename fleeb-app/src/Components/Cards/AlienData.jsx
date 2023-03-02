@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useNavigate } from 'react'
 import axios from 'axios'
+import AlienDataCss from '../Styles/AlienData.css'
 
-export default function AlienData () {
+export default function AlienData ({onClick}) {
 
     //making a state to set data in x
     //setting up a useEffect to control my components lifecycle x
@@ -12,6 +13,7 @@ export default function AlienData () {
     //setup Guard Opeartor
 
     const [ricks, setRicks] = useState([])
+    const [selectedRick, setSelectedRick] = useState(null)
 
     useEffect(() => {
         const url = "https://rickandmortyapi.com/api/character"
@@ -26,6 +28,14 @@ export default function AlienData () {
         
     }, [])
 
+        let navigate = useNavigate()
+      
+        const showRick = (rick) => {
+        navigate(`${rick.id}`) }
+      
+        const flipCard = (rick) => {
+        setSelectedRick(rick)
+      }
 
     console.log(ricks)
     //Our state of rick is an array x
@@ -39,22 +49,26 @@ export default function AlienData () {
                 ricks.map((rick) => (
                   rick.species!="Human"?
                     <div className="alien-card" key={rick.id}>
-                  <h1>{rick.name}</h1> 
-                <img src={rick.image}/>
-              <h2>ID No.{rick.id}</h2>
-            </div>:null
-   ) )
-  
-  }
+                      <div className="alien-card-front" onClick={onClick}>
+                        <h2>{rick.name}</h2>
+                        <img src={rick.image} alt={rick.name}/>
+                        <h3>ID No.{rick.id}</h3>
+                        <div style={{minWidth: '30em', display: 'flex', justifyContent: 'center', alignItems: 'center'}}/>
+                      </div>
+                {selectedRick && selectedRick.id === rick.id && (<div className="character-card-back">
+                  <h1>Species: {rick.species} </h1>
+                  <h2>Status: {rick.status}</h2>
+                  <button onClick={() => setSelectedRick(null)}>Close</button>
+                </div>)}
+                <button onClick={() => flipCard(rick)}>More Information</button>
+              </div>:null
+            
+   ))}
              </div>      
           )} else {
               return (
                 <h1> loading please wait </h1>
-        )}
-
-
-  
-}
+        )}}
 
 
 
