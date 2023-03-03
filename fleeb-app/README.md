@@ -1,9 +1,9 @@
-#Rick and Morty React Project using an API: Character Gun Portal
+# Rick and Morty React Project using an API: Character Gun Portal
 
-### Link to API: https://rickandmortyapi.com/
+##### Link to API: https://rickandmortyapi.com/
 
 ## This fully developed website is an index of characters from the show "Rick and Morty"
 
-### Link to my medium-fidelity wireframe: https://www.figma.com/file/lmJ82DWbFkA9sqsMSts7hv/Project-2---Character-Portal-Gun?node-id=0%3A1&t=Yq9fkFXhT12vAZRp-1
+##### Link to my medium-fidelity wireframe: https://www.figma.com/file/lmJ82DWbFkA9sqsMSts7hv/Project-2---Character-Portal-Gun?node-id=0%3A1&t=Yq9fkFXhT12vAZRp-1
 
 ## I was able to reach all my goals including incorporating a search engine, and create a flip effect for it to show the info once turned
