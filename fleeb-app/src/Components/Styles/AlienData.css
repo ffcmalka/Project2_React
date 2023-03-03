@@ -1,24 +1,3 @@
-.alien-card {
-  padding: 1em;
-  width: 18em;
-  height: 15em;
-  background-color: limegreen;
-  border-radius: 0.5em;
-  margin: 1em;
-  justify-content: space-around;
-  box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.527);
-  color: white;
-  font-family: 'Georgia';
-  cursor: pointer;
-}
-
-.alien-card img{
-  grid-template-columns: repeat(auto-fit, minmax(384px, 1fr));
-  max-width: 100%;
-  height: 10em;
-  object-fit: center;
-  box-shadow: inset 0 0 1em rgb(0, 0, 0);
-}
 
 .alien-card:hover {
   transform: scale(1.01);
@@ -28,4 +7,122 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+.alien-card {
+  padding: 1em;
+  width: 10em;
+  height: 15em;
+  background-color: #e762d7ff;
+  border-radius: 0.5em;
+  border: 5px solid #002113;
+  margin: 10px;
+  justify-content: space-around;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.527);
+  color: #002109;
+  font-family: get-schwifty;font-size: 22px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  position: relative;
+  transition: transform 1000ms;
+  margin-top: 200px;
+}
+
+
+.alien-grid h1{
+  position: fixed;
+  color: #22d8e4;
+  text-shadow: 2px 2px white;
+  justify-content: center;
+  padding-left: 50px;
+  
+}
+
+
+.alien-card-front,
+.alien-card-back{
+-webkit-backface-visibility: hidden;
+backface-visibility: hidden;
+}
+
+.alien-card-back ul{
+font-size: 20px;
+color:black;
+list-style: square;
+font-family:Copperplate;
+font-weight: bold;
+padding-left: 15px;
+padding: 25px;
+}
+
+.alien-card-back {
+  transform: rotateY(180deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 0.5em;
+  border: 5px solid #002113;
+  padding: 1em;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-family: get-schwifty;
+}
+
+.character-card-back h1,h2,h3,h4 {
+  font-size: 14px;
+  position: relative;
+}
+.alien-card h2, h3{
+  font-size: 14px;
+}
+
+.alien-card img{
+  max-width: 100%;
+  height: 10em;
+  object-fit: center;
+  border-radius: 50%;
+  border: 2px solid black;
+  box-shadow: inset 0 0 1em rgb(0, 0, 0);
+}
+
+.alien-card:hover {
+  transform: rotateY(180deg);
+}
+
+.alien-grid {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+button{
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  border: 1px solid #4682B4;
+  }
+
+/* Exit Transition 
+showFront = true -> false
+front -> back
+
+Enter Transition 
+showFront = false -> true
+back -> front */
+
+.flip-exit {
+  transform: rotateY(0deg);
+}
+
+.flip-exit-active {
+  transform: rotateY(360deg);
+  transition: transform;
+}
+
+.flip-exit-done {
+  transform: rotateY(0deg);
 }

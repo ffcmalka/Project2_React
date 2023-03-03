@@ -1,0 +1,47 @@
+.header-image img{
+  width: 25%;
+  float: right;
+  padding-bottom: 75%;
+}
+
+header {
+  background-color: chartreuse;
+  display: flex;
+}
+
+header ul {
+  display: flex;
+  list-style: none;
+  font-family: 'get-schwifty'
+}
+
+header a {
+  color: black;
+  font-size: 1.3rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  margin: auto 1em;
+}
+
+header a:hover {
+  color: #22d8e4;
+}
+
+.plumbus-container h1,h2,h4,h5{
+  font-size: 30px;
+  color: #22d8e4;
+  text-shadow: 1px 3px chartreuse;
+}
+
+.plumbus-container h2{
+  color:#62a4ab;
+  font-size: 50px;
+  text-shadow: 2px 5px white;
+}
+
+.plumbus-container h4{
+  color:#f9bf1e;
+  font-size: 50px;
+  text-shadow: 5px 5px #7c3e1d;
+}
+

@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
-import SearchBar from './SearchBar'
 
 
 export default function CharacterData ({onClick}) {
@@ -52,23 +51,30 @@ export default function CharacterData ({onClick}) {
         // create an onClick close button to aet intial state of null again. X
         // Create another button to display description using Onclick. X
         // Using CSS make the card flip. X
+
   if (ricks) {
     return (
       <div className="character-grid">
-          <h1> Characters from Rick and Morty </h1>
+          <h1> All Characters </h1>
           {
             ricks.map((rick) => (
               <div className="character-card" key={rick.id}>
                 <div className="character-card-front" onClick={onClick}>
                   <h2>{rick.name}</h2>
-                    <img src={rick.image} alt={rick.name}/>
+                  <img src={rick.image} alt={rick.name}/>
                   <h3>ID No.{rick.id}</h3>
-                <div style={{minWidth: '30em', display: 'flex', justifyContent: 'center', alignItems: 'center'}}/>
+                  <div style={{minWidth: '30em', display: 'flex', justifyContent: 'center', alignItems: 'center'}}/>
               </div>
                 {selectedRick && selectedRick.id === rick.id && (<div className="character-card-back">
-                  <h1>Species: {rick.species} </h1>
-                  <h2>Status: {rick.status}</h2>
-                  <button onClick={() => setSelectedRick(null)}>Close</button>
+                  <div className='card-back'>
+                  <ul>
+                    <li> Species: {rick.species} </li>
+                    <li> Origin: {rick.origin.name} </li>
+                    <li> Last Location: {rick.location.name} </li>
+                    <li> Created On: {rick.created} </li>
+                  </ul>
+                  
+                  <button onClick={() => setSelectedRick(null)}>Close</button> </div>
                 </div>)}
                 <button onClick={() => flipCard(rick)}>More Information</button>
               </div>

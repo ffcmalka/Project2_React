@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  background-color: #ffd9e4;
+  background-color: black;
+  font-family: get-schwifty;
 }
 
 .App-logo {
@@ -22,36 +23,10 @@
   src: url('/src/get_schwifty.ttf');
 }
 
-.plumbus{
-  font-family: get-schwifty;
-}
 
-header {
-  background-color: #3e0021;
-  justify-content: flex-start;
-  display: flex;
-}
 
-header ul {
-  display: flex;
-  list-style: none;
-  font-family: 'get-schwifty'
-}
 
-header a {
-  color: #eee;
-  font-size: 1.3rem;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  margin: auto 1em;
-}
 
-header a:hover {
-  color: lime;
-}
 
-img{
-  max-width: 75%;
-}
 
 

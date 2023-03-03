@@ -1,4 +1,5 @@
-import { useState, useEffect, useNavigate } from 'react'
+import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import AlienDataCss from '../Styles/AlienData.css'
 
@@ -44,7 +45,7 @@ export default function AlienData ({onClick}) {
       if (ricks) {
           return (
             <div className="alien-grid">
-              <h1>Aliens</h1>
+              <h1>List of Aliens</h1>
      { 
                 ricks.map((rick) => (
                   rick.species!="Human"?
@@ -53,11 +54,14 @@ export default function AlienData ({onClick}) {
                         <h2>{rick.name}</h2>
                         <img src={rick.image} alt={rick.name}/>
                         <h3>ID No.{rick.id}</h3>
-                        <div style={{minWidth: '30em', display: 'flex', justifyContent: 'center', alignItems: 'center'}}/>
+                      <div style={{minWidth: '30em', display: 'flex', justifyContent: 'center', alignItems: 'center'}}/>
                       </div>
-                {selectedRick && selectedRick.id === rick.id && (<div className="character-card-back">
-                  <h1>Species: {rick.species} </h1>
-                  <h2>Status: {rick.status}</h2>
+                {selectedRick && selectedRick.id === rick.id && (<div className="alien-card-back">
+                  <ul>
+                  <li>{rick.name}</li>
+                  <li>Status: {rick.status}</li>
+                  <li>Last Location: {rick.location.name}</li>
+                  </ul>
                   <button onClick={() => setSelectedRick(null)}>Close</button>
                 </div>)}
                 <button onClick={() => flipCard(rick)}>More Information</button>

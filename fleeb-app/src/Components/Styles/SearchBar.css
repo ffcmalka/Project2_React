@@ -1,0 +1,20 @@
+input{
+width: 30em;
+height: 2em;
+border-radius: 5px;
+border: 10px groove chartreuse;
+}
+
+.search-bar{
+padding: 50px;
+}
+
+.template{
+  padding: 50px;
+}
+
+.template img{
+  border-radius: 50%;
+  border: 5px inset chartreuse;
+}
+

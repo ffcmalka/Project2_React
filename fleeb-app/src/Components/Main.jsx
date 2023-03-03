@@ -5,6 +5,9 @@ import HumanData from './Cards/HumanData'
 import AlienData from './Cards/AlienData'
 
 export default function Main () {
+
+
+
   return (
     <div className="main">
         <Routes>
