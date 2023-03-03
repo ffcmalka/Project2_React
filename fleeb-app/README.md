@@ -1,14 +1,9 @@
-# Getting Started with Character Gun Portal
+#Rick and Morty React Project using an API: Character Gun Portal
 
 ### Link to API: https://rickandmortyapi.com/
 
-## Goals
-My goal is to create either index cards or a search engine where you can search up or find more information about a character in the show. 
-It should be able to render whether the character is alive or not, which episode they're from, and their last known location
+## This fully developed website is an index of characters from the show "Rick and Morty"
 
-## Stretch Goals
-If I am able to I want to incorporate a search engine so people can find their favorite character and see the info.
+### Link to my medium-fidelity wireframe: https://www.figma.com/file/lmJ82DWbFkA9sqsMSts7hv/Project-2---Character-Portal-Gun?node-id=0%3A1&t=Yq9fkFXhT12vAZRp-1
 
-## MVP
-
-### Create at least index cards with info on them.
+## I was able to reach all my goals including incorporating a search engine, and create a flip effect for it to show the info once turned
